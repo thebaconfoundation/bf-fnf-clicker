@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>BF fnf clicker!</title>
+	</head>
+	<body>
+		<p>Score: <span id="score">0</span></p>
+		<img src="images/bfmainfr.gif" height="167px" width="167px" onclick="addToScore(1)">
+
+		<script>
+			var score=0;
+
+			function addToScore(amount) {
+				score=score+amount;
+				document.getElementById("score").innerHTML=score;
+			}
+		</script>
+	</body>
+</html>
