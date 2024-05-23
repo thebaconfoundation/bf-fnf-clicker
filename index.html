@@ -6,12 +6,27 @@
 		<p>Score: <span id="score">0</span></p>
 		<img src="images/bfmainfr.gif" height="167px" width="167px" onclick="addToScore(1)">
 
+		<button>AutoClick [<span id="ACcost">50</span>] <span id="ACs">0</span></button>
+
 		<script>
 			var score=0;
+
+			var ACcost=50;
+			var ACs=0;
+
+			function buyAC() {
+				if (score>=ACcost) {
+					score=score-ACcost;
+					ACs=ACs+1;
+					ACcost=math.round(ACcost*1.15);
+				}
+			}
 
 			function addToScore(amount) {
 				score=score+amount;
 				document.getElementById("score").innerHTML=score;
+				document.getElementById("ACcost").innerHTML=ACcost;
+				document.getElementById("ACs").innerHTML=ACs;
 			}
 		</script>
 	</body>
